@@ -17,6 +17,10 @@ public class RecipeServiceImpl implements RecipeService {
         this.recipeRepository = recipeRepository;
     }
 
+    public Recipe findById(Long id) {
+        return recipeRepository.findById(id).orElse(null);
+    }
+
     @Override
     public Set<Recipe> getRecipes() {
         log.debug("Inside Get Recipes");
